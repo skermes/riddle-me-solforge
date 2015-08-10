@@ -1,41 +1,10 @@
-@import "./global.less";
-@import "./board.less";
-@import "./loading.less";
-@import "./cards.less";
-@import "./player-status.less";
-@import "./ui.less";
-@import "./search.less";
-@import "./card-details.less";
-@import "./toolbar.less";
-
-body {
-  margin: 0;
-
-  // background-image: url('img/misc/background_shop_view_deck.jpg');
-  background-size: cover;
-}
-
-#container {
-  width: @puzzle-width;
-  margin: auto;
-  height: ~"calc(100% - 30px)";
-}
-
-.app-editing #container {
-  width: @editing-width;
-}
-
-.side, .main {
-  display: inline-block;
-}
-
-.side {
-  width: @search-width;
-  vertical-align: top;
-  height: 100%;
-  margin-right: @search-margin;
-}
-
-.main {
-  width: @puzzle-width;
-}
+@import "./less/global.less";
+@import "./less/layout.less";
+@import "./less/board.less";
+@import "./less/loading.less";
+@import "./less/cards.less";
+@import "./less/player-status.less";
+@import "./less/ui.less";
+@import "./less/search.less";
+@import "./less/card-details.less";
+@import "./less/toolbar.less";

@@ -1,0 +1,33 @@
+@import "./global.less";
+
+body {
+  margin: 0;
+
+  // background-image: url('img/misc/background_shop_view_deck.jpg');
+  background-size: cover;
+}
+
+#container {
+  width: @puzzle-width;
+  margin: auto;
+  height: ~"calc(100% - 30px)";
+}
+
+.app-editing #container {
+  width: @editing-width;
+}
+
+.side, .main {
+  display: inline-block;
+}
+
+.side {
+  width: @search-width;
+  vertical-align: top;
+  height: 100%;
+  margin-right: @search-margin;
+}
+
+.main {
+  width: @puzzle-width;
+}
