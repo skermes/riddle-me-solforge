@@ -1,0 +1,117 @@
+@import "./global.less";
+
+#title {
+  font-family: @ui-font;
+  color: #333;
+  font-size: @title-size;
+
+  box-sizing: border-box;
+  display: inline-block;
+  border-bottom: 1px solid #333;
+  padding: @thin-margin @wide-margin;
+  // margin: (@wide-margin * 3) 0 @wide-margin 0;
+  margin-bottom: @wide-margin;
+  width: @board-width;
+}
+
+#title textarea {
+  .invisible-input();
+  resize: none;
+  padding: 0;
+  width: 100%;
+}
+
+#opponent-lanes, #player-lanes {
+  height: @lane-height;
+  display: inline-block;
+}
+
+.lane {
+  width: @lane-width;
+  height: @lane-height;
+  margin-left: @wide-margin;
+  display: inline-block;
+
+  // background: transparent;
+}
+
+.lane.empty-lane {
+  background-color: @empty-space-color;
+}
+
+.lane:first-child {
+  margin-left: 0;
+}
+
+.lane.active-lane {
+  background-color: @lane-highlight-color;
+  box-shadow: 0 0 @thin-margin @thin-margin @lane-highlight-color;
+}
+
+.lane.dropping-lane {
+  // box-shadow: inset 0 0 @wide-margin @wide-margin @lane-highlight-color;
+}
+
+#lane-numbers {
+  margin: @thin-margin 0;
+}
+
+.lane-number {
+  width: @lane-width;
+  height: 20px;
+  margin-left: @wide-margin;
+  display: inline-block;
+  text-align: center;
+
+  color: #333;
+
+  font-family: @ui-font;
+  line-height: 15px
+}
+
+.lane-number:first-child {
+  margin-left: 0;
+}
+
+.hand {
+  margin-top: @wide-margin;
+}
+
+.hand .hand-slot {
+  width: @lane-width;
+  height: @lane-height;
+  display: inline-block;
+  position: relative;
+}
+
+.hand .hand-slot-0 {
+  transform: rotate(-35deg);
+  top: 80px;
+  left: 60px;
+}
+
+.hand .hand-slot-1 {
+  transform: rotate(-20deg);
+  top: 20px;
+  left: 30px;
+}
+
+.hand .hand-slot-2 {
+  transform: rotate(0deg);
+}
+
+.hand .hand-slot-3 {
+  transform: rotate(20deg);
+  top: 20px;
+  right: 30px;
+}
+
+.hand .hand-slot-4 {
+  transform: rotate(35deg);
+  top: 80px;
+  right: 60px;
+}
+
+.hand .hand-slot:hover {
+  z-index: 1;
+}

@@ -1,0 +1,221 @@
+@import "./global.less";
+
+.card {
+  position: relative;
+  width: @lane-width;
+  height: @lane-height;
+
+  z-index: 0;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.card.dragging-card {
+  opacity: 0;
+}
+
+.card .card-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.card .card-art {
+  position: absolute;
+  top: @art-top;
+  left: @art-left;
+  width: @art-width;
+  height: @art-height;
+}
+
+.card.card-spell .card-art {
+  top: @spell-art-top;
+  left: @spell-art-left;
+}
+
+.card .card-name {
+  font-family: @card-font;
+  font-size: 13px;
+  color: @card-text-color;
+
+  position: absolute;
+  top: @name-top;
+  left: @name-left;
+  width: @name-width;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card.card-spell .card-name {
+  top: @spell-name-top;
+}
+
+.card.card-level-4 .card-name {
+  top: @level-four-name-top;
+  left: @level-four-name-left;
+}
+
+.card .card-menu-container {
+  position: absolute;
+  top: @thin-margin;
+  right: @thin-margin;
+
+  color: @text-color-on-empty;
+  background-color: @empty-space-color;
+  font-family: @ui-font;
+}
+
+.card-menu-container .card-menu-trigger,
+.card-menu-container .remove-card-trigger,
+.card-menu-container .card-info-trigger {
+  display: inline-block;
+  padding: 0 @thin-margin;
+
+  color: @text-color-on-empty;
+  background-color: @empty-space-color;
+  border: 1px solid @menu-border-color;
+
+  &:not(:last-child) {
+    border-right: none;
+  }
+}
+
+.card-menu-container .remove-card-trigger {
+  background-color: @dangerous-empty-space;
+}
+
+.card .card-defensive {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  margin: -(@defensive-size / 2) 0 0 -(@defensive-size / 2);
+  width: @defensive-size;
+  height: @defensive-size;
+  opacity: 0.6;
+}
+
+.card .keywords {
+  position: absolute;
+  bottom: @stat-height + @wide-margin;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.card .keywords .keyword-icon {
+  position: relative;
+  font-family: @card-font;
+  display: inline-block;
+}
+
+.card .keywords .keyword-icon .keyword-image {
+  width: @keyword-size;
+  height: @keyword-size;
+}
+
+.card .keywords .keyword-icon input {
+  .invisible-input();
+  width: 2rem;
+  text-align: center;
+}
+
+.card .keywords .keyword-icon .value {
+  display: inline-block;
+  width: 1.2rem;
+  text-align: center;
+}
+
+.card .keywords .keyword-icon input, .card .keywords .keyword-icon .value {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+}
+
+.card .attack, .card .health {
+  color: @stat-color;
+  font-family: @card-font;
+  font-size: @stat-size;
+  text-shadow: @stat-shadow;
+
+  position: absolute;
+  bottom: @stat-bottom-margin;
+}
+
+.card .attack input, .card .health input {
+  .invisible-input();
+  width: @stat-width;
+  text-align: center;
+}
+
+.card .attack {
+  left: 0;
+}
+
+.card .attack .value {
+  display: inline-block;
+  width: @stat-width - @wide-margin;
+  text-align: center;
+}
+
+.card .attack input {
+  margin-left: @thin-margin;
+}
+
+.card .health {
+  right: -@wide-margin;
+}
+
+.card .health .value {
+  display: inline-block;
+  text-align: center;
+  width: @stat-width;
+  margin-right: @thin-margin;
+}
+
+.card .health input {
+  text-align: center;
+  float: right;
+}
+
+.card-menu {
+  font-family: @ui-font;
+  background-color: @menu-background-color;
+  box-shadow: @menu-shadow;
+  color: fade(@text-color-on-empty, 70%);
+  border: 1px solid @menu-border-color;
+}
+
+.card-menu .menu-entry {
+  padding: @thin-margin @wide-margin;
+  cursor: pointer;
+}
+
+.card-menu .menu-entry:not(:last-child) {
+  border-bottom: 1px solid @menu-border-color;
+}
+
+.card-menu .menu-entry.has-attribute,
+.card-menu .menu-entry:hover {
+  color: @text-color-on-empty;
+}
+
+.card-menu .menu-entry.menu-entry-dangerous {
+  background-color: @dangerous-empty-space;
+}
+
+.card-menu .menu-entry img {
+  width: @menu-icon-size;
+  height: @menu-icon-size;
+  margin-right: @wide-margin;
+}

@@ -1,0 +1,109 @@
+@import "./global.less";
+
+#toolbar {
+  height: @wide-margin * 3;
+  text-align: right;
+
+  background-color: @empty-space-color;
+  min-width: @puzzle-width;
+}
+
+.toolbar-contents {
+  width: @puzzle-width;
+  margin: auto;
+}
+
+.app-editing {
+  #toolbar {
+    min-width: @editing-width;
+  }
+
+  .toolbar-contents {
+    width: @editing-width;
+  }
+}
+
+.toolbar-item {
+  display: inline-block;
+  font-family: @ui-font;
+  margin-left: @wide-margin * 3;
+  padding-top: @thin-margin;
+  box-sizing: border-box;
+  height: 100%;
+  color: @text-color-on-empty;
+  cursor: pointer;
+
+  &:hover {
+    color: @toolbar-highlight-color;
+  }
+
+  &.toolbar-item-special {
+    color: @toolbar-highlight-color;
+    padding-left: @wide-margin;
+    padding-right: @wide-margin;
+
+    &:hover {
+      background-color: @toolbar-highlight-color;
+      color: @empty-space-color;
+    }
+  }
+
+  &.toolbar-item-disabled {
+    cursor: auto;
+    opacity: 0.5;
+  }
+}
+
+.share-menu {
+  background-color: @menu-background-color;
+  box-shadow: @menu-shadow;
+  border: 1px solid @menu-border-color;
+  color: white;
+  font-family: @ui-font;
+  padding: @wide-margin;
+  margin-left: @wide-margin;
+}
+
+.share-menu label,
+.share-menu input {
+  display: block;
+}
+
+.share-menu input {
+  margin-bottom: @wide-margin;
+  font-family: inherit;
+  border: 1px solid #777;
+  padding: @thin-margin;
+}
+
+.help {
+  .fancy-scrollbar();
+  font-family: @ui-font;
+  max-width: 30em;
+  max-height: @lane-height * 3;
+  overflow-y: scroll;
+  padding: @wide-margin * 3;
+  color: @ui-font-color;
+}
+
+.help h1 {
+  display: block;
+  border-bottom: 1px solid @ui-font-color;
+  margin-top: 0;
+}
+
+.help p {
+  margin: (@wide-margin * 2) 0;
+
+  &.more-space {
+    margin: (@wide-margin * 4) 0
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

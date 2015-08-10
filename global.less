@@ -1,0 +1,126 @@
+@lane-height: 215px;
+@lane-width: 158px;
+
+@art-top: 37px;
+@art-left: 15px;
+@art-height: 170px;
+@art-width: 128px;
+@spell-art-top: 32px;
+@spell-art-left: 13px;
+
+@name-top: 15px;
+@name-left: 13px;
+@name-width: 105px;
+@spell-name-top: 11px;
+@level-four-name-top: 18px;
+@level-four-name-left: 15px;
+
+@stat-size: 25px;
+@stat-height: @stat-size;
+@stat-width: 55px;
+@stat-bottom-margin: 3px;
+
+@player-frame-size: 100px;
+@rank-font-size: @stat-size;
+@rank-circle-size: @rank-font-size * 2.25;
+@player-health-font-size: @stat-size * 0.75;
+@player-health-width: @player-health-font-size * 2.5;
+@player-health-height: @player-health-font-size * 5;
+
+@title-size: 30px;
+
+@keyword-size: 30px;
+@menu-icon-size: 13px;
+@defensive-size: 140px;
+
+@wide-margin: 10px;
+@thin-margin: 5px;
+
+@spinner-frame-size: 100px;
+@spinner-highlight-size: 59px;
+@spinner-highlight-offset-top: 18px;
+@spinner-highlight-offset-left: 15px;
+
+@search-width: (@lane-width * 0.75 * 4) + (@wide-margin * 5);
+@search-margin: @wide-margin * 4;
+@board-width: (@lane-width * 5) + (@wide-margin * 4);
+@puzzle-width: @board-width + @player-frame-size + @wide-margin;
+@editing-width: @search-width + @search-margin + @puzzle-width;
+
+@empty-space-color: rgba(0, 0, 0, 0.7);
+@dangerous-empty-space: rgba(200, 50, 50, 0.7);
+@text-color-on-empty: white;
+@card-text-color: #333;
+@stat-color: #E8DEB9;
+@stat-shadow: 2px 2px 0 #333;
+
+@rank-color: white;
+@rank-shadow: @stat-shadow;
+@player-health-color: @stat-color;
+
+@lane-highlight-color: rgb(230, 253, 133);
+@menu-border-color: rgba(255, 255, 255, 0.5);
+
+@toolbar-highlight-color: rgb(230, 253, 133);
+
+@menu-background-color: #333;
+@menu-shadow: 0 @thin-margin @wide-margin black;
+
+@ui-font-color: #333;
+@ui-font: 'Bree Serif', sans-serif;
+@card-font: 'Bree Serif', sans-serif;
+
+.invisible-input() {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-shadow: inherit;
+}
+
+@scrollbar-background: white;
+@scrollbar-color: #777;
+@scrollbar-hover-color: #333;
+@scrollbar-size: 10px;
+
+.fancy-scrollbar() {
+  &::-webkit-scrollbar {
+    width: @scrollbar-size;
+    height: @scrollbar-size;
+    background-color: @scrollbar-background;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: @scrollbar-background;
+  }
+
+  &::-webkit-scrollbar-track:horizontal {
+    background-color: @scrollbar-background;
+    border-left: none;
+    border-top: 1px solid @scrollbar-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: @scrollbar-color;
+    box-shadow: inset 0px 0px 0px 2px @scrollbar-background;
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-left: none;
+    border-top: 1px solid @scrollbar-color;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: @scrollbar-hover-color;
+  }
+
+  &::-webkit-scrollbar-corner,
+  &::-webkit-resizer {
+    border-top: 1px solid @scrollbar-color;
+    border-left: 1px solid @scrollbar-color;
+  }
+}

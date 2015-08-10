@@ -1,0 +1,87 @@
+@import "./global.less";
+
+.loading {
+  font-family: @ui-font;
+  color: @ui-font-color;
+  font-size: @title-size;
+
+  text-align: center;
+  padding-top: 40px;
+}
+
+.spinner {
+  position: relative;
+  left: 50%;
+  margin-left: -(@spinner-frame-size / 2);
+  margin-top: 40px;
+}
+
+.spinner .frame,
+.spinner .highlight{
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+}
+
+.spinner .highlight{
+  width: @spinner-highlight-size;
+  height: @spinner-highlight-size;
+  top: @spinner-highlight-offset-top;
+  left: @spinner-highlight-offset-left;
+}
+
+.spinner .frame {
+  width: @spinner-frame-size;
+  height: @spinner-frame-size;
+  background-image: url(img/misc/aiThinkingFrame512.png);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotateZ(0deg);
+  }
+
+  100% {
+    -moz-transform: rotateZ(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.spinner .highlight {
+  background-image: url(img/misc/aiThinkingRotate512.png);
+
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+
+  animation-name: spin;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

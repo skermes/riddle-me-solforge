@@ -1,0 +1,169 @@
+@import "./global.less";
+
+.player-status {
+  font-family: @ui-font;
+
+  display: inline-block;
+  width: @player-frame-size;
+  margin-left: @wide-margin;
+  vertical-align: bottom;
+
+  position: relative;
+  left: 20px;
+}
+
+#opponent-lanes + .player-status {
+  top: -30px;
+}
+
+#player-lanes + .player-status {
+  top: 70px;
+}
+
+.player-status .frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: url(img/misc/player_avatar_frame.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.player-status .avatar {
+  position: absolute;
+  width: 70px;
+  height: 100%;
+  left: 15px;
+  top: 15px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#opponent-lanes + .player-status .avatar {
+  background-image: url(img/misc/avatar_se036-3.png);
+}
+
+#player-lanes + .player-status .avatar {
+  background-image: url(img/misc/avatar_GhoxAlt3.png);
+}
+
+.player-status .health {
+  color: @player-health-color;
+  font-size: @player-health-font-size;
+
+  position: relative;
+  display: block;
+  width: @player-health-width;
+  height: @player-health-height;
+  top: -50px;
+  left: -15px;
+
+  background-image: url(img/misc/player_health_badge.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  padding-top: 25px;
+}
+
+.player-status .health input {
+  .invisible-input();
+
+  max-width: 100%;
+  margin-left: @wide-margin;
+  text-align: center;
+}
+
+.player-status .health .value {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.player-status .rank-indicator {
+  position: relative;
+  top: -5px;
+  left: 30px;
+
+  height: @rank-circle-size;
+  width: @rank-circle-size;
+
+  background-image: url(img/misc/player_level_badge.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  font-size: @rank-font-size;
+  color: @rank-color;
+  text-shadow: @rank-shadow;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.player-status .rank-indicator input {
+  .invisible-input();
+
+  position: absolute;
+  left: 35%;
+  width: 1.1em;
+}
+
+.player-status .turn-indicator {
+  display: block;
+  position: absolute;
+  top: 0;
+
+  width: @rank-circle-size;
+  height: @rank-circle-size;
+
+  // background-color: rgba(255, 0, 0, 0.2);
+}
+
+.player-status .turn-indicator.turn-1 .turn-1-highlight,
+.player-status .turn-indicator.turn-1 .turn-2-highlight,
+.player-status .turn-indicator.turn-1 .turn-3-highlight {
+  display: none;
+}
+
+.player-status .turn-indicator.turn-2 .turn-2-highlight,
+.player-status .turn-indicator.turn-2 .turn-3-highlight {
+  display: none;
+}
+
+.player-status .turn-indicator.turn-3 .turn-3-highlight {
+  display: none;
+}
+
+.player-status .turn-indicator .turn-1-highlight,
+.player-status .turn-indicator .turn-2-highlight,
+.player-status .turn-indicator .turn-3-highlight {
+  display: block;
+  position: absolute;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  height: @rank-circle-size / 2;
+  width: @rank-circle-size / 2;
+}
+
+.player-status .turn-indicator .turn-1-highlight {
+  top: 3px;
+  left: 3px;
+
+  background-image: url(img/misc/lvl1_xp.png);
+}
+
+.player-status .turn-indicator .turn-2-highlight {
+  background-image: url(img/misc/lvl2_xp.png);
+
+  top: 3px;
+  left: 24px;
+}
+
+.player-status .turn-indicator .turn-3-highlight {
+  background-image: url(img/misc/lvl3_xp.png);
+
+  top: 25px;
+  left: 24px;
+}

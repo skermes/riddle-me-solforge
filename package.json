@@ -1,0 +1,19 @@
+{
+  "name": "puzzles",
+  "version": "0.0.1",
+  "description": "Solforge Puzzle Builder",
+  "main": "puzzles.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean Kermes",
+  "license": "ISC",
+  "dependencies": {
+    "envify": "^3.4.0",
+    "lodash": "^3.10.0",
+    "react": "^0.13.3",
+    "react-dnd": "^1.0.0",
+    "reflux": "^0.2.7",
+    "sifter": "^0.4.3"
+  }
+}
