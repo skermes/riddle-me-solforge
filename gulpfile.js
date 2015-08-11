@@ -69,3 +69,13 @@ gulp.task('scripts', ['clean-scripts'], watchify(function(watchify) {
 }));
 
 gulp.task('watch-scripts', ['enable-watch-mode', 'scripts']);
+
+gulp.task('clean-html', function() {
+  return gulp.src(deployDir + '/**/*.html')
+             .pipe(clean());
+});
+
+gulp.task('html', function() {
+  return gulp.src('html/**/*')
+             .pipe(gulp.dest(deployDir));
+});
