@@ -87,6 +87,8 @@ gulp.task('clean', ['clean-html', 'clean-data', 'clean-images', 'clean-styles', 
 gulp.task('watch', ['watch-scripts'], function() {
   gulp.watch('html/**/*', ['html']);
   gulp.watch('data/**/*', ['data']);
-  gulp.watch('img/**/*', ['images']);
+  // gulp.watch takes a *really* long time to index or whatever the img/ folder.
+  // They don't change often, so I'll just do it manually.
+  // gulp.watch('img/**/*', ['images']);
   gulp.watch('less/**/*', ['styles']);
 });
