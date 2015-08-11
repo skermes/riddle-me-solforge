@@ -83,3 +83,10 @@ gulp.task('html', function() {
 gulp.task('build', ['html', 'data', 'images', 'styles', 'scripts']);
 
 gulp.task('clean', ['clean-html', 'clean-data', 'clean-images', 'clean-styles', 'clean-scripts']);
+
+gulp.task('watch', ['watch-scripts'], function() {
+  gulp.watch('html/**/*', ['html']);
+  gulp.watch('data/**/*', ['data']);
+  gulp.watch('img/**/*', ['images']);
+  gulp.watch('less/**/*', ['styles']);
+});
