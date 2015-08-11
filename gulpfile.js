@@ -79,3 +79,7 @@ gulp.task('html', function() {
   return gulp.src('html/**/*')
              .pipe(gulp.dest(deployDir));
 });
+
+gulp.task('build', ['html', 'data', 'images', 'styles', 'scripts']);
+
+gulp.task('clean', ['clean-html', 'clean-data', 'clean-images', 'clean-styles', 'clean-scripts']);
