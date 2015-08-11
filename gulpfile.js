@@ -17,3 +17,15 @@ gulp.task('images', ['clean-images'], function() {
   return gulp.src(imgDevSrc)
              .pipe(gulp.dest(imgDir));
 });
+
+var dataDir = deployDir + '/data';
+
+gulp.task('clean-data', function() {
+  return gulp.src(dataDir)
+             .pipe(clean());
+});
+
+gulp.task('data', ['clean-data'], function() {
+  return gulp.src('data/**/*')
+             .pipe(gulp.dest(dataDir));
+});
