@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     clean = require('gulp-clean'),
     less = require('gulp-less'),
-    path = require('path');
+    path = require('path'),
+    watchify = require('gulp-watchify');
 
 var deployDir = 'public';
 
@@ -44,3 +45,27 @@ gulp.task('styles', ['clean-styles'], function() {
              .pipe(less({paths: [path.join(__dirname, 'less')]}))
              .pipe(gulp.dest(stylesDir));
 });
+
+var scriptsDir = deployDir + '/js';
+
+gulp.task('clean-scripts', function() {
+  return gulp.src(scriptsDir)
+             .pipe(clean());
+});
+
+// Hack to enable configurable watchify watching
+// From https://github.com/marcello3d/gulp-watchify/blob/master/examples/simple/gulpfile.js
+var watching = false;
+gulp.task('enable-watch-mode', function() {
+  watching = true;
+});
+
+gulp.task('scripts', ['clean-scripts'], watchify(function(watchify) {
+  return gulp.src('js/puzzles.js')
+             .pipe(watchify({
+                watch: watching
+             }))
+             .pipe(gulp.dest(scriptsDir));
+}));
+
+gulp.task('watch-scripts', ['enable-watch-mode', 'scripts']);

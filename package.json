@@ -17,8 +17,11 @@
     "sifter": "^0.4.3"
   },
   "devDependencies": {
+    "browserify": "^9.0.8",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
-    "gulp-less": "^3.0.3"
+    "gulp-less": "^3.0.3",
+    "gulp-watchify": "^0.5.0",
+    "watchify": "^3.3.1"
   }
 }
