@@ -1,5 +1,7 @@
 var gulp = require('gulp'),
-    clean = require('gulp-clean');
+    clean = require('gulp-clean'),
+    less = require('gulp-less'),
+    path = require('path');
 
 var deployDir = 'public';
 
@@ -28,4 +30,17 @@ gulp.task('clean-data', function() {
 gulp.task('data', ['clean-data'], function() {
   return gulp.src('data/**/*')
              .pipe(gulp.dest(dataDir));
+});
+
+var stylesDir = deployDir + '/css';
+
+gulp.task('clean-styles', function() {
+  return gulp.src(stylesDir)
+             .pipe(clean());
+});
+
+gulp.task('styles', ['clean-styles'], function() {
+  return gulp.src('less/puzzles.less')
+             .pipe(less({paths: [path.join(__dirname, 'less')]}))
+             .pipe(gulp.dest(stylesDir));
 });
