@@ -15,5 +15,9 @@
     "react-dnd": "^1.0.0",
     "reflux": "^0.2.7",
     "sifter": "^0.4.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1"
   }
 }
