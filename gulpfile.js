@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     less = require('gulp-less'),
     path = require('path'),
-    watchify = require('gulp-watchify');
+    watchify = require('gulp-watchify'),
+    rename = require('gulp-rename');
 
 var deployDir = 'public';
 
@@ -18,6 +19,9 @@ gulp.task('clean-images', function() {
 
 gulp.task('images', ['clean-images'], function() {
   return gulp.src(imgDevSrc)
+             .pipe(rename(function(path) {
+                path.basename = path.basename.replace(/ /g, '_');
+             }))
              .pipe(gulp.dest(imgDir));
 });
 

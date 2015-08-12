@@ -19,7 +19,7 @@ var cardType = function(card) {
 };
 
 var artSrc = function(art) {
-  return 'img/art/small_' + art + '.jpg';
+  return 'img/art/small_' + art.replace(/ /g, '_') + '.jpg';
 };
 
 var frameSrc = function(level, faction, type) {
