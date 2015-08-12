@@ -3,7 +3,7 @@
 body {
   margin: 0;
 
-  // background-image: url('img/misc/background_shop_view_deck.jpg');
+  background-image: url('/img/misc/FillerBG.jpg');
   background-size: cover;
 }
 
@@ -11,6 +11,13 @@ body {
   width: @puzzle-width;
   margin: auto;
   height: ~"calc(100% - 30px)";
+
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 3px;
+
+  padding: 0 (@wide-margin * 2) 0 @wide-margin;
 }
 
 .app-editing #container {
