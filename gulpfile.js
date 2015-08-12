@@ -20,7 +20,8 @@ gulp.task('clean-images', function() {
 gulp.task('images', ['clean-images'], function() {
   return gulp.src(imgDevSrc)
              .pipe(rename(function(path) {
-                path.basename = path.basename.replace(/ /g, '_');
+                path.basename = path.basename.replace(/ /g, '_')
+                                             .toLowerCase();
              }))
              .pipe(gulp.dest(imgDir));
 });
