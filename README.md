@@ -14,7 +14,7 @@ Find your local Solforge installation (on my machine it's at `C:\Program Files (
 * `img\frames` contains several of the files from `card_frames_small\.  In particular, everything named `lvl1_death_creature_small.png` and similar.  Level 1 to 4 (3 for spells), death/nature/elemental/mechanical and creature/spell.  You can include the other files in the folder if you want, but you don't need them.
 * `img\misc` contains a variety of files.  All the keyword icons from `card_misc`.  `aiThinkingFrame` and `aiThinkingRotate` from `gamescreen`.  `avatar_GhoxAlt3` and `avatar_se036-3` from `mission_avatars`.  `FillerBG` from `assets\app default assets`. The xp bars, `player_avatar_frame`, `player_health_badge` and `player_level_badge` from `player_frames`.
 
-Get a `cards.json` file and put it in `data`.  To get `cards.json` either build [my sf-data project](https://github.com/skermes/sf-data) and run it over the latest Solforge data files (as described in that project) or download [tk](tk/cards.json).
+Get a `cards.json` file and put it in `data`.  To get `cards.json` either build [my sf-data project](https://github.com/skermes/sf-data) and run it over the latest Solforge data files (as described in that project) or download it from [solforge-riddles.com](http://solforge-riddles.com/data/cards.json).
 
 Run `gulp build`.  This will compile the css and javascript and copy the relevant static files into `public`.
 
