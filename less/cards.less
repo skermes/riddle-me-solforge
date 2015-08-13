@@ -76,23 +76,18 @@
   font-family: @ui-font;
 }
 
-.card-menu-container .card-menu-trigger,
-.card-menu-container .remove-card-trigger,
-.card-menu-container .card-info-trigger {
+.card-menu-container .card-menu-trigger {
   display: inline-block;
   padding: 0 @thin-margin;
 
   color: @text-color-on-empty;
-  background-color: @empty-space-color;
+  font-size: 20px;
+  background-color: @menu-background-color;
   border: 1px solid @menu-border-color;
 
   &:not(:last-child) {
     border-right: none;
   }
-}
-
-.card-menu-container .remove-card-trigger {
-  background-color: @dangerous-empty-space;
 }
 
 .card .card-defensive {
@@ -156,16 +151,33 @@
   .invisible-input();
   width: @stat-width;
   text-align: center;
+  margin-bottom: 2px;
+}
+
+.card.card-level-4 .attack input,
+.card.card-level-4 .attack input {
+  margin-bottom: 0;
 }
 
 .card .attack {
   left: 0;
 }
 
+.card .attack .value,
+.card .health .value {
+  margin-bottom: 3px;
+}
+
+.card.card-level-4 .attack .value,
+.card.card-level-4 .health .value {
+  margin-bottom: 1px;
+}
+
 .card .attack .value {
   display: inline-block;
-  width: @stat-width - @wide-margin;
+  width: @stat-width - (@thin-margin * 3);
   text-align: center;
+  margin-left: @thin-margin;
 }
 
 .card .attack input {
@@ -179,8 +191,8 @@
 .card .health .value {
   display: inline-block;
   text-align: center;
-  width: @stat-width;
-  margin-right: @thin-margin;
+  width: @stat-width - (@thin-margin * 3);
+  margin-right: @thin-margin * 3;
 }
 
 .card .health input {

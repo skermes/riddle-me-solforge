@@ -51,17 +51,22 @@ var SearchResultLevelContainer = React.createClass({
   },
 
   selectCard: function() {
-    this.setState({active: true});
+    if (this.state.active) {
+      this.setState({active: false});
+      boardActions.selectCard(undefined);
+    } else {
+      this.setState({active: true});
 
-    boardActions.selectCard({
-      side: 'search',
-      index: this.props.index,
-      level: this.props.level.level,
-      card: {
-        cardId: this.props.cardId,
-        level: this.props.level.level
-      }
-    });
+      boardActions.selectCard({
+        side: 'search',
+        index: this.props.index,
+        level: this.props.level.level,
+        card: {
+          cardId: this.props.cardId,
+          level: this.props.level.level
+        }
+      });
+    }
   }
 });
 
