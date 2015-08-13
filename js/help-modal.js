@@ -18,7 +18,7 @@ var HelpModal = React.createClass({
         'Solforge is owned by Stoneblade Entertainment (',
         dom.a({href: 'http://solforgegame.com'}, 'http://solforgegame.com'),
         ').  The code for Riddle Me Solforge can be found at ',
-        dom.a({href: '#'}, 'http://github.com/skermes/whatever'),
+        dom.a({href: '#'}, 'https://github.com/skermes/riddle-me-solforge'),
         '.'));
   }
 });
