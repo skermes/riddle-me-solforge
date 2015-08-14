@@ -7,20 +7,18 @@ body {
   background-size: cover;
 }
 
-@rotated-cards-fudge: 120px;
-
 #container {
   width: @puzzle-width;
   margin: auto;
   // 150 = toolbar-height + rotated-cards-fudge
-  min-height: ~"calc(100% - 150px)";
+  min-height: ~"calc(100% - 30px)";
 
   background-color: white;
   border-style: solid;
   border-color: black;
   border-width: 0 3px;
 
-  padding: 0 (@wide-margin * 2) @rotated-cards-fudge @wide-margin;
+  padding: 0 (@wide-margin * 2) 0 @wide-margin;
 }
 
 .app-editing #container {
