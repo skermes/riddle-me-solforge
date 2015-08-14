@@ -15,22 +15,27 @@ var Title = React.createClass({
 
   getInitialState: function() {
     return {
-      lines: 1
+      lines: 1,
+      tempTitle: undefined
     };
   },
 
   render: function() {
-    var change = undefined;
+    var change = undefined, save = undefined;
     if (this.props.editing) {
       change = this.changeTitle;
+      save = this.saveTitle;
     }
+
+    var title = this.state.tempTitle || this.state.puzzle.title;
 
     return dom.div({id: 'title'},
       dom.textarea({
         ref: 'input',
         onChange: change,
+        onBlur: save,
         style: {height: this.state.lines * LINE_HEIGHT},
-        value: this.state.puzzle.title,
+        value: title,
         disabled: !this.props.editing
       }));
   },
@@ -47,12 +52,18 @@ var Title = React.createClass({
 
   changeTitle: function(e) {
     var title = e.target.value;
-    boardActions.changeTitle(title);
+    this.setState({tempTitle: title});
 
     var elem = this.refs.input.getDOMNode();
     if (elem.clientHeight < elem.scrollHeight) {
       this.setState({lines: this.state.lines + 1});
     }
+  },
+
+  saveTitle: function(e) {
+    var title = this.state.tempTitle || this.state.puzzle.title;
+    boardActions.changeTitle(title);
+    this.setState({tempTitle: undefined});
   }
 });
 
