@@ -2,5 +2,8 @@
   "name": "riddle-me-solforge",
   "root": "public",
   "clean_urls": true,
-  "error_page": "index.html"
+  "error_page": "index.html",
+  "routes": {
+    "/*": "index.html"
+  }
 }
