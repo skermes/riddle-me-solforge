@@ -15,7 +15,8 @@
 
 .search .search-results {
   overflow-y: scroll;
-  height: ~"calc(100% - 85px)";
+  // Fudge for rotated cards and title and lane numbers.  Totally made up.
+  max-height: (@lane-height * 3) + 170px;
 }
 
 .search .search-result {
