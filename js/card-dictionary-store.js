@@ -5,7 +5,7 @@ var cardDataActions = require('./actions').cardData;
 // I could stick this in a config file or something but it's just as easy for
 // me to change this as anything else.
 // Might as well keep this value in line with Solforge card releases.
-var cardDataVersion = '6.1';
+var cardDataVersion = '6.1.1';
 
 var _dictionaryState = {
   cardList: undefined,
@@ -25,6 +25,12 @@ var loadDataFromServer = function() {
       var success = xhr.status < 400;
       if (success) {
         var data = xhr.response;
+
+        // IE keeps the data as a string, unline Chrome and FF, who pay attention
+        // to xhr.responseType.
+        if (typeof data === 'string') {
+          data = JSON.parse(data);
+        }
 
         localStorage.setItem('solforgeCardData', JSON.stringify(data));
         localStorage.setItem('solforgeCardDataVersion', cardDataVersion);

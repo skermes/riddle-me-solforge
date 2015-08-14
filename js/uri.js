@@ -67,7 +67,7 @@ URI = {
     var tokens = uri.split(FIELD_SEPARATOR);
 
     var id = tokens[0];
-    var level = Number.parseInt(tokens[1]);
+    var level = parseInt(tokens[1]);
 
     var card = {
       cardId: id,
@@ -85,12 +85,12 @@ URI = {
         var keyword = [uriTokenCodes[tokenCode]];
 
         if (token.length > 1) {
-          keyword.push(Number.parseInt(token.substring(1)));
+          keyword.push(parseInt(token.substring(1)));
         }
 
         card.keywords.push(keyword);
       } else {
-        var value = (token.length > 1) ? Number.parseInt(token.substring(1)) : true;
+        var value = (token.length > 1) ? parseInt(token.substring(1)) : true;
         card[uriTokenCodes[tokenCode]] = value;
       }
 
@@ -103,9 +103,9 @@ URI = {
   parsePlayerInfo: function(uri) {
     var tokens = uri.split(FIELD_SEPARATOR);
     return {
-      rank: Number.parseInt(tokens[0]),
-      turn: Number.parseInt(tokens[1]),
-      health: Number.parseInt(tokens[2])
+      rank: parseInt(tokens[0]),
+      turn: parseInt(tokens[1]),
+      health: parseInt(tokens[2])
     };
   },
 

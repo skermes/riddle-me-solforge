@@ -21,7 +21,7 @@ var EditableNumber = React.createClass({
       return;
     }
 
-    var value = Number.parseInt(e.target.value);
+    var value = parseInt(e.target.value);
     if (value === NaN) {
       value = 0;
     }
