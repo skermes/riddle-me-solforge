@@ -5,7 +5,7 @@ var cardDataActions = require('./actions').cardData;
 // I could stick this in a config file or something but it's just as easy for
 // me to change this as anything else.
 // Might as well keep this value in line with Solforge card releases.
-var cardDataVersion = '6.1.1';
+var cardDataVersion = '6.2';
 
 var _dictionaryState = {
   cardList: undefined,
